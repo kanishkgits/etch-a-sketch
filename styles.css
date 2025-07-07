@@ -28,12 +28,19 @@
     margin: 0;
     padding: 0;
 }
-#buttonDiv{
+#container2{
     display: flex;
     justify-content: center;
 }
-#gridGenerator{
+#gridGenerator, #allColours, #randomizedColour{
     margin: 10px;
     padding: 10px;
     background-color: wheat;
+}
+#gridGenerator{
+    margin-right: auto;
+}
+#buttonContainer{
+    width: 800px;
+    display: flex;
 }

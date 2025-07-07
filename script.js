@@ -1,4 +1,5 @@
 const container = document.querySelector(".container");
+let colour = "pink";
 
 for(let i=0; i<16; i++){
     const div = document.createElement("div");
@@ -33,12 +34,21 @@ let newGridParameters = () => {
 };
 container.addEventListener("mouseover", (e) =>{
     if(e.target.className ===  "elements"){
-        e.target.style.backgroundColor = "pink";
+        if(colour == 1) e.target.style.backgroundColor = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+        else e.target.style.backgroundColor = colour;
     }
 });
 
-const button = document.querySelector("#gridGenerator");
-button.addEventListener("click", () => {
+const gridGeneratorButton = document.querySelector("#gridGenerator");
+gridGeneratorButton.addEventListener("click", () => {
     container.replaceChildren();
     newGridParameters();
+});
+
+const options = document.querySelector("#options");
+options.addEventListener("click", (e) => {
+    if(e.target.id == "allColours") colour = 1;
+    if(e.target.id == "randomizedColour"){
+        colour = `rgb(${Math.random()*255}, ${Math.random()*255}, ${Math.random()*255})`;
+    }
 });
